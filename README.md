@@ -13,3 +13,5 @@ npm -g i typescript
 tsc 'ts-hello.ts'
 node 'ts-hello.js'
 ```
+
+## [整理的API](zhmh_api.js)

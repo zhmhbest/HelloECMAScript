@@ -17,14 +17,31 @@ Object.prototype.toURIArgs = function () {
  */
 String.prototype.parseAsArgs = function () {
     var buffer = {};
-    var str = this.trim();
-    if (0===str.length) {return buffer;}
-    var items = str.split('&');
+    var __this__ = this.trim();
+    if (0===__this__.length) {return buffer;}
+    var items = __this__.split('&');
     items.forEach(function (item) {
         var kv = item.split('=');
         buffer[kv[0]] = decodeURIComponent(kv[1]);
     });
     return buffer;
+};
+
+
+/**
+ * 集合操作
+ */
+/*并集*/ Array.prototype.union = function (arr) {
+    var __this__=this;
+    return __this__.concat(arr.filter(function(v){return __this__.indexOf(v)===-1}));
+};
+/*交集*/ Array.prototype.intersection = function (arr) {
+    var __this__=this;
+    return arr.filter(function(v){return __this__.indexOf(v)>-1});
+};
+/*差集*/ Array.prototype.difference = function (arr) {
+    var __this__=this;
+    return arr.filter(function(v){return __this__.indexOf(v)===-1});
 };
 
 
