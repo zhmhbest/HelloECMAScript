@@ -45,33 +45,6 @@ String.prototype.parseAsArgs = function () {
 };
 
 
-/**
- * Hash操作器
- * @constructor
- */
-var HashHolder = (function () {
-    function apply() {
-        this.hash = this.dict.toURIArgs();
-        window.location.hash = this.hash;
-    }
-    function load(hash_string) {
-        this.hash = hash_string || window.location.hash.substr(1);
-        this.dict = this.hash.parseAsArgs();
-    }
-    function toString() {
-        return this.hash;
-    }
-    return function() {
-        /**
-         * 将修改dict的数据应用到全局
-         */
-        this.apply = apply;
-        this.load = load;
-        this.toString = toString;
-    }
-})();
-
-
 var zhmh_api = (function () {
     var __this__ = Object();
     // ■■■■■■■■■■■■■■■■ ■■■■■■■■■■■■■■■■ ■■■■■■■■■■■■■■■■ ■■■■■■■■■■■■■■■■
@@ -200,11 +173,31 @@ var zhmh_api = (function () {
 
 
     /**
+     * Hash操作器
+     * @constructor
+     */
+    __this__.HashHolder = function() {
+        var __this__ = this;
+        this.apply = function() {
+            __this__.hash = __this__.dict.toURIArgs();
+            window.location.hash = __this__.hash;
+        };
+        this.load = function(hash_string) {
+            __this__.hash = hash_string || window.location.hash.substr(1);
+            __this__.dict = __this__.hash.parseAsArgs();
+        };
+        this.toString = function () {
+            return __this__.hash;
+        };
+    };
+
+
+    /**
      * Hash改变捕获
-     * @param {function(HashChangeEvent, HashHolder)} fn
+     * @param {function(HashChangeEvent, __this__.HashHolder)} fn
      */
     __this__.hash_onchange = function (fn) {
-        var hash = new HashHolder();
+        var hash = new __this__.HashHolder();
         if (undefined === window.onhashchange || null === window.onhashchange) {
             window.onhashchange = function (ev) {
                 hash.load();
