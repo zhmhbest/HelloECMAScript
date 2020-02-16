@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HelloECMAScript.iml" filepath="$PROJECT_DIR$/HelloECMAScript.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/HelloECMAScript.iml" filepath="$PROJECT_DIR$/.idea/HelloECMAScript.iml" />
     </modules>
   </component>
 </project>
