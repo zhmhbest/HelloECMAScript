@@ -6,12 +6,6 @@
 
 ## [ES5 this](ES5.1/demo-this.js)
 
-## [TypeScript](ts-hello.ts)
 
-```bash
-npm -g i typescript
-tsc 'ts-hello.ts'
-node 'ts-hello.js'
-```
 
 ## [整理的API](zhmh_api.js)
