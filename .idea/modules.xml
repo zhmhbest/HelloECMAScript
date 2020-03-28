@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/ES5.1/ES5.1.iml" filepath="$PROJECT_DIR$/ES5.1/ES5.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/ES6/ES6.iml" filepath="$PROJECT_DIR$/ES6/ES6.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/HelloECMAScript.iml" filepath="$PROJECT_DIR$/.idea/HelloECMAScript.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nodejs/Nodejs.iml" filepath="$PROJECT_DIR$/Nodejs/Nodejs.iml" />
       <module fileurl="file://$PROJECT_DIR$/TS/TS.iml" filepath="$PROJECT_DIR$/TS/TS.iml" />
     </modules>
   </component>
