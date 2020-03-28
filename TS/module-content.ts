@@ -4,7 +4,7 @@
 export const PI : number = 3.1415926;
 
 //函数
-export function echoHello() : void {
+export function sayHello() : void {
     console.log('Hello');
 }
 
@@ -12,31 +12,29 @@ export function echoHello() : void {
 export interface Animal {
     getAge() : number;
     setAge(age : number);
-    getGender() : boolean;
-    setGender(gender : boolean);
 }
 
 //抽象类
 export abstract class BigAnimal implements Animal {
-    protected name: string;
     protected gender: boolean;
     protected age: number;
-    private LivingPlace: string;
+
+    private readonly LivingPlace: string;
     protected constructor() {
         this.LivingPlace = 'Earth';
     }
-    public getLivingPlace() : string { return this.LivingPlace;}
+    public getLivingPlace() : string { return this.LivingPlace; }
 
     public abstract getAge(): number;
     public abstract setAge(age: number);
     public abstract getGender(): boolean;
     public abstract setGender(gender : boolean);
-    public abstract getName(): string;
-    public abstract setName(name : string);
 }
 
 //类
 export class People extends BigAnimal {
+    protected name: string;
+
     public constructor(name: string, gender: boolean, age: number) {
         super();
         this.name = name;
