@@ -10,6 +10,11 @@ console.log("【Set】");
     set.add(3); // 重复添加无效
     console.log(set);
 
+    // 迭代
+    for (let ele of set) {
+        console.log(ele);
+    }
+
     // 从字符串创建
     let set_str = new Set("Hello");
     console.log(set_str);
