@@ -96,6 +96,8 @@ let cookie = (function() {
             } else {
                 return _cacheCookies[name];
             }
-        }
+        },
+
+        reload: _loadCookies
     }
 })();
