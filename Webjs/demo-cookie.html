@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookie</title>
+    <script src="cookie.js"></script>
+</head>
+<body>
+<script>
+    /**
+     * 增查删
+     */
+    cookie.set("hello", "Welcome to our world!");
+    setTimeout(function () {
+        console.log(cookie.get("hello"));
+        cookie.del("hello");
+        setTimeout(function () {
+            console.log("hello", cookie.get("hello", undefined, true));
+        }, 2000);
+    }, 2000);
+</script>
+
+<script>
+    /**
+     * 时效
+     */
+    cookie.set("time", "Goodbye!", 1);
+    console.log(cookie.get("time"));
+    setTimeout(function () {
+        console.log("time", cookie.get("time", undefined, true));
+    }, 2000);
+</script>
+
+<script>
+    /**
+     * 域
+     */
+    cookie.set("domain", "I am the Royal!", undefined, '/');
+    console.log(cookie.get("domain"));
+    cookie.del("domain", '/sub'); // 此删除无效
+    setTimeout(function () {
+        console.log("domain", cookie.get("domain", undefined, true));
+    }, 2000);
+</script>
+</body>
+</html>

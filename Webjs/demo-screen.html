@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Screen</title>
+    <script src="screen.js"></script>
+</head>
+<body>
+<script>
+    pushScreenOnresize(function (ev, width, height) {
+        console.log(1, width, height)
+    });
+    pushScreenOnresize(function (ev, width, height) {
+        console.log(2, width, height)
+    });
+</script>
+</body>
+</html>

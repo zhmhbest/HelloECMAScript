@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/HelloECMAScript.iml" filepath="$PROJECT_DIR$/.idea/HelloECMAScript.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nodejs/Nodejs.iml" filepath="$PROJECT_DIR$/Nodejs/Nodejs.iml" />
       <module fileurl="file://$PROJECT_DIR$/TS/TS.iml" filepath="$PROJECT_DIR$/TS/TS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Webjs/Webjs.iml" filepath="$PROJECT_DIR$/Webjs/Webjs.iml" />
     </modules>
   </component>
 </project>
