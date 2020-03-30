@@ -5,9 +5,15 @@
 console.log("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 console.log('【Iterator】'); // 数组遍历
 var arr1 = ['a', 'b', 'c', 'd'];
+arr1.attr = 'wtf';
+for (var index in arr1) {
+    console.log(index, arr1[index]);
+}
+console.log("");
 arr1.forEach(function (item, index, arr) {
     console.log(index, item);
 });
+
 
 console.log("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 console.log('【Concat】'); // 数组合并

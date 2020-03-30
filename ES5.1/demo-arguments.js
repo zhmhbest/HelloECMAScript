@@ -1,7 +1,6 @@
 
 function f() {
-    console.log(typeof arguments);
-    console.log(arguments.length, arguments)
+    console.log(typeof arguments, arguments.length, arguments)
 }
 
 
