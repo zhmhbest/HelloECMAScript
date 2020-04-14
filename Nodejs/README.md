@@ -1,3 +1,48 @@
 # Nodejs
 
-- [API文档](http://nodejs.cn/api/)
+- [Download](https://nodejs.org/en/download/)
+- [API Docs](http://nodejs.cn/api/)
+
+## NPM
+
+### 修改目录
+
+```batch
+cd /d D:\ProgramFiles\Programmer\Language\Nodejs
+REM 全局包安装位置
+npm config set prefix %CD%\bin
+REM 包缓存位置
+npm config set cache %CD%\cache
+```
+
+### 镜像设置
+
+```bash
+npm config set registry https://registry.npm.taobao.org/
+npm config set ELECTRON_MIRROR https://npm.taobao.org/mirrors/electron/
+npm config ls
+```
+
+### 初始化
+
+```bash
+npm init
+# npm init -f
+```
+
+### 包安装
+
+```bash
+# 当前开发环境
+npm -D i <package_name>
+```
+
+```bash
+# 当前运行环境
+npm -S i <package_name>
+```
+
+```bash
+# 全局安装
+npm -g i <package_name>
+```
