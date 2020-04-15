@@ -39,11 +39,36 @@ npm -D i <package_name>
 ```
 
 ```bash
-# 当前运行环境
+# 当前运行依赖环境
 npm -S i <package_name>
 ```
 
 ```bash
 # 全局安装
 npm -g i <package_name>
+```
+
+## YARN
+
+```bash
+# 全局安装
+npm -g i yarn
+yarn --version
+```
+
+## 安装包
+
+```bash
+# 根据package.json自动安装
+yarn install
+```
+
+```bash
+# 当前开发环境
+yarn -D add <package_name>
+```
+
+```bash
+# 当前运行依赖环境
+yarn add <package_name>
 ```
