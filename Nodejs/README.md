@@ -8,7 +8,8 @@
 ### 修改目录
 
 ```batch
-cd /d D:\ProgramFiles\Programmer\Language\Nodejs
+REM cd /d D:\ProgramFiles\Programmer\Language\Nodejs
+mkdir bin & mkdir cache
 REM 全局包安装位置
 npm config set prefix %CD%\bin
 REM 包缓存位置
