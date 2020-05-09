@@ -5,27 +5,28 @@ console.log("■■■■■■■■■■■■■■■■■■■■■■�
  * 如果上下文没有明显的对象，this指代window
  */
 (function () {
-    function WhatIsThis() {
-        console.log(this.name)
+    function WhatIsThis(word1, word2) {
+        console.log(this.name, word1, word2)
     }
-    var obj1 = {
+
+    let obj1 = {
         name: "obj1",
-        say: WhatIsThis
+        say: WhatIsThis,
     };
-    var obj2 = {
-        name: "obj2",
-        say: WhatIsThis
-    };
-    obj1.say();
-    obj2.say();
+
+    let obj2 = Object();
+    obj2.name = "obj2";
+    obj2.say = WhatIsThis;
+
+    obj1.say('小瞎子', '');
+    obj2.say('小鸵鸟', '');
 
     // 通过call或apply方法，可以手动指定this
     // call  this后接 形参
     // apply this后接 arguments
-    WhatIsThis.call(obj1);
-    WhatIsThis.apply(obj2);
+    WhatIsThis.call(obj1, 'call', '2nd');
+    WhatIsThis.apply(obj2, ['apply', '2nd']);
 })();
-
 
 
 console.log("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
