@@ -56,7 +56,7 @@ npm -g i yarn
 yarn --version
 ```
 
-## 安装包
+### 安装包
 
 ```bash
 # 根据package.json自动安装
