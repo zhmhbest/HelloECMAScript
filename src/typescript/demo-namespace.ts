@@ -12,4 +12,4 @@ namespace HelloSpace {
 
 //使用命名空间内容元素
 HelloSpace.saySomething();
-// HelloSpace.sayNothing(); // 无法访问
+//HelloSpace.sayNothing(); // 无法访问

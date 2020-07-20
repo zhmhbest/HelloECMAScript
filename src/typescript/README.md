@@ -5,9 +5,11 @@
 ```bash
 npm init -f
 npm i -D typescript
-#npx tsc
 ```
 
+### 运行代码
+
 ```bash
-npm install
+npx tsc demo-namespace.ts
+node demo-namespace.js
 ```
