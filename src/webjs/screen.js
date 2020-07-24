@@ -7,16 +7,16 @@
 pushScreenOnresize = function (fn) {
     if (undefined === window.onresize || null === window.onresize) {
         window.onresize = function (ev) {
-            fn(ev, document.documentElement.clientWidth, document.documentElement.clientHeight);
+            fn(ev);
         };
     } else {
         /** @type {function(UIEvent)} */
         let loaded = window.onresize;
         window.onresize = function (ev) {
             loaded(ev);
-            fn(ev, document.documentElement.clientWidth, document.documentElement.clientHeight);
+            fn(ev);
         };
     }
     // 第一次 激活
-    fn(null, document.documentElement.clientWidth, document.documentElement.clientHeight);
+    fn(null);
 };

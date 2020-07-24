@@ -5,14 +5,15 @@
     <title>Screen</title>
     <script src="screen.js"></script>
 </head>
-<body>
+<body></body>
 <script>
-    pushScreenOnresize(function (ev, width, height) {
-        console.log(1, width, height)
+    pushScreenOnresize(function (ev) {
+        const w = document.documentElement.clientWidth;
+        const h = document.documentElement.clientHeight;
+        console.log(1, w, h)
     });
-    pushScreenOnresize(function (ev, width, height) {
-        console.log(2, width, height)
+    pushScreenOnresize(function (ev) {
+        console.log(2)
     });
 </script>
-</body>
 </html>
