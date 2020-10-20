@@ -66,6 +66,20 @@ object 3 [Arguments] { '0': 1, '1': 2, '2': 3 }
 
 @import "src/base_set.js" {code_block=true class="line-numbers"}
 
+```txt
+set1 = [ 1, 2, 3 ]
+set2 = [ 3, 2, 5 ]
+set1 ∪ set2 = [ 1, 2, 3, 5 ]
+set2 ∪ set1 = [ 3, 2, 5, 1 ]
+set1 ∩ set2 = [ 2, 3 ]
+set2 ∩ set1 = [ 3, 2 ]
+[ 1, 2, 3 ] - [ 2, 3 ] = [ 1 ]
+[ 3, 2, 5 ] - [ 3, 2 ] = [ 5 ]
+```
+
 ## 日期
 
 @import "src/base_date.js" {code_block=true class="line-numbers"}
+
+## 容器
+

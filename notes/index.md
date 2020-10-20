@@ -16,5 +16,6 @@
 - WebJS
 - NodeJS
 
-## [基本语法](base.html)
+## [Base](base.html)
 
+## [Typescript](typescript/index.html)
