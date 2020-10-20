@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>index</title>
+      <title>nodejs</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -263,28 +263,75 @@ pre[data-line] .line-highlight[data-end]:after {
       <div class="mume markdown-preview  ">
       <link rel="stylesheet" href="https://zhmhbest.gitee.io/hellomathematics/style/index.css">
 <script src="https://zhmhbest.gitee.io/hellomathematics/style/index.js"></script>
-<h1 class="mume-header" id="ecmascript"><a href>ECMAScript</a></h1>
+<h1 class="mume-header" id="nodejsindexhtml"><a href="./index.html">Nodejs</a></h1>
 
-<h2 class="mume-header" id="%E6%A6%82%E8%BF%B0">&#x6982;&#x8FF0;</h2>
-
-<p>&#x6309;&#x7167;&#x8BED;&#x6CD5;&#x5212;&#x5206;</p>
 <ul>
-<li>ECMAScript 5</li>
-<li>ECMAScript 6</li>
-<li>TypeScript</li>
-</ul>
-<p>&#x6309;&#x7167;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x5212;&#x5206;</p>
+<li><a href="#nodejsindexhtml">Nodejs</a>
 <ul>
-<li>WebJS</li>
-<li>NodeJS</li>
+<li><a href="#npm-yarn">NPM &amp; YARN</a>
+<ul>
+<li><a href="#npm">NPM</a>
+<ul>
+<li><a href="#%E4%BF%AE%E6%94%B9%E7%9B%AE%E5%BD%95">&#x4FEE;&#x6539;&#x76EE;&#x5F55;</a></li>
+<li><a href="#%E9%95%9C%E5%83%8F%E8%AE%BE%E7%BD%AE">&#x955C;&#x50CF;&#x8BBE;&#x7F6E;</a></li>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96">&#x521D;&#x59CB;&#x5316;</a></li>
+<li><a href="#%E5%8C%85%E5%AE%89%E8%A3%85">&#x5305;&#x5B89;&#x88C5;</a></li>
 </ul>
-<h2 class="mume-header" id="basebasehtml"><a href="base.html">Base</a></h2>
+</li>
+<li><a href="#yarn">YARN</a>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85%E5%8C%85">&#x5B89;&#x88C5;&#x5305;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="npm-yarn">NPM &amp; YARN</h2>
 
-<h2 class="mume-header" id="typescripttypescriptindexhtml"><a href="typescript/index.html">Typescript</a></h2>
+<h3 class="mume-header" id="npm">NPM</h3>
 
-<h2 class="mume-header" id="nodejsnodejshtml"><a href="nodejs.html">Nodejs</a></h2>
+<h4 class="mume-header" id="%E4%BF%AE%E6%94%B9%E7%9B%AE%E5%BD%95">&#x4FEE;&#x6539;&#x76EE;&#x5F55;</h4>
 
+<pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token command"><span class="token keyword">mkdir</span> bin </span><span class="token operator">&amp;</span> <span class="token command"><span class="token keyword">mkdir</span> cache</span>
+<span class="token comment">REM &#x5168;&#x5C40;&#x5305;&#x5B89;&#x88C5;&#x4F4D;&#x7F6E;</span>
+<span class="token command"><span class="token keyword">npm</span> config set prefix <span class="token variable">%CD%</span>\bin</span>
+<span class="token comment">REM &#x5305;&#x7F13;&#x5B58;&#x4F4D;&#x7F6E;</span>
+<span class="token command"><span class="token keyword">npm</span> config set cache <span class="token variable">%CD%</span>\cache</span>
+</pre><h4 class="mume-header" id="%E9%95%9C%E5%83%8F%E8%AE%BE%E7%BD%AE">&#x955C;&#x50CF;&#x8BBE;&#x7F6E;</h4>
 
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">npm</span> config <span class="token keyword">set</span> registry https://registry.npm.taobao.org/
+<span class="token function">npm</span> config <span class="token keyword">set</span> ELECTRON_MIRROR https://npm.taobao.org/mirrors/electron/
+<span class="token function">npm</span> config <span class="token function">ls</span>
+</pre><h4 class="mume-header" id="%E5%88%9D%E5%A7%8B%E5%8C%96">&#x521D;&#x59CB;&#x5316;</h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">npm</span> init
+<span class="token comment"># npm init -f</span>
+</pre><h4 class="mume-header" id="%E5%8C%85%E5%AE%89%E8%A3%85">&#x5305;&#x5B89;&#x88C5;</h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x6839;&#x636E;package.json&#x81EA;&#x52A8;&#x5B89;&#x88C5;</span>
+<span class="token function">npm</span> <span class="token function">install</span>
+</pre><pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x5F53;&#x524D;&#x5F00;&#x53D1;&#x73AF;&#x5883;</span>
+<span class="token function">npm</span> -D i <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+</pre><pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x5F53;&#x524D;&#x8FD0;&#x884C;&#x4F9D;&#x8D56;&#x73AF;&#x5883;</span>
+<span class="token function">npm</span> -S i <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+</pre><pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x5168;&#x5C40;&#x5B89;&#x88C5;</span>
+<span class="token function">npm</span> -g i <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+</pre><h3 class="mume-header" id="yarn">YARN</h3>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x5168;&#x5C40;&#x5B89;&#x88C5;yarn</span>
+<span class="token function">npm</span> -g i yarn
+yarn --version
+</pre><h4 class="mume-header" id="%E5%AE%89%E8%A3%85%E5%8C%85">&#x5B89;&#x88C5;&#x5305;</h4>
+
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x6839;&#x636E;package.json&#x81EA;&#x52A8;&#x5B89;&#x88C5;</span>
+yarn <span class="token function">install</span>
+</pre><pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x5F53;&#x524D;&#x5F00;&#x53D1;&#x73AF;&#x5883;</span>
+yarn -D add <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+</pre><pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x5F53;&#x524D;&#x8FD0;&#x884C;&#x4F9D;&#x8D56;&#x73AF;&#x5883;</span>
+yarn add <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+</pre>
       </div>
       
       
