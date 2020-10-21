@@ -1,5 +1,5 @@
 /*
- * Generator
+ * SequenceGenerator
  */
 
 /** @return {number} */
