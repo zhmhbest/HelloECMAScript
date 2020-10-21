@@ -106,3 +106,4 @@ object 3 [Arguments] { '0': 1, '1': 2, '2': 3 }
 
 ### Arraybuffer
 
+@import "src/base_es6_arraybuffer.js" {code_block=true class="line-numbers"}
