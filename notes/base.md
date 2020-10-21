@@ -66,5 +66,13 @@ object 3 [Arguments] { '0': 1, '1': 2, '2': 3 }
 
 @import "src/base_date.js" {code_block=true class="line-numbers"}
 
-## 容器
+## ES6新特性
+
+前面已经用到了`let`、`const`、`() => {}`等ES6语法，此章将尝试其它特性。
+
+### 解构
+
+@import "src/base_es6_deconstruction.js" {code_block=true class="line-numbers"}
+
+### 容器
 
