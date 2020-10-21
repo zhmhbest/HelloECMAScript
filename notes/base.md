@@ -82,5 +82,9 @@ object 3 [Arguments] { '0': 1, '1': 2, '2': 3 }
 
 @import "src/base_es6_promise.js" {code_block=true class="line-numbers"}
 
+### Class
+
+@import "src/base_es6_class.js" {code_block=true class="line-numbers"}
+
 ### 容器
 
