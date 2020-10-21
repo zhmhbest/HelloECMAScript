@@ -98,7 +98,11 @@ object 3 [Arguments] { '0': 1, '1': 2, '2': 3 }
 
 #### Map
 
+@import "src/base_es6_map.js" {code_block=true class="line-numbers"}
+
 #### Set
+
+@import "src/base_es6_set.js" {code_block=true class="line-numbers"}
 
 ### Arraybuffer
 
