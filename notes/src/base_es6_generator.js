@@ -1,46 +1,45 @@
-/**
- *
- * @param generator
- * @param callback
+/*
+ * Generator
  */
-const generator_iteration = (generator, callback) => {
-    for(;;) {
-        let next = generator.next();
-        callback(next.value);
-        if (next.done) {
-            break;
-        }
+
+/** @return {number} */
+function* Generator123() {
+    yield 1;
+    yield 2;
+    return 3;
+}
+
+const generators = {
+    /** @return {number} */* Generator456() {
+        let i;
+        for (i = 4; i < 6; i++) yield i;
+        return i;
+    },
+    /** @return {number} */
+    Generator789: function* () {
+        let i;
+        for (i = 7; i < 9; i++) yield i;
+        return i;
     }
 };
 
-
-console.log("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-console.log("【Generator】");
-{
-    function* generator(){
-        yield '1';
-        yield '2';
-        return '3';
+function runGenerator(g) {
+    for (; ;) {
+        let next = g.next();
+        console.log(next.value);
+        if (next.done) break;
     }
-    generator_iteration(generator(), it => {
-        console.log(it)
-    });
 }
 
+let generator;
 
-console.log("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
-console.log("【Abbreviation】");
-{
-    let generator = {
-        *generateHello() {
-            yield 'Hello1';
-            return 'Hello2';
-        },
-        generateGoodbye: function* () {
-            yield 'Goodbye1';
-            return 'Goodbye2';
-        }
-    };
-    generator_iteration(generator.generateHello(), it => {console.log(it)});
-    generator_iteration(generator.generateGoodbye(), it => {console.log(it)});
-}
+generator = Generator123();
+runGenerator(generator);
+console.log("■■■■■■■■■■■■■■■■ ■■■■■■■■■■■■■■■■");
+
+generator = generators.Generator456();
+runGenerator(generator);
+console.log("■■■■■■■■■■■■■■■■ ■■■■■■■■■■■■■■■■");
+
+generator = generators.Generator789();
+runGenerator(generator);

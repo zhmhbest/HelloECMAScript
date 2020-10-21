@@ -74,5 +74,9 @@ object 3 [Arguments] { '0': 1, '1': 2, '2': 3 }
 
 @import "src/base_es6_deconstruction.js" {code_block=true class="line-numbers"}
 
+### 序列生成器
+
+@import "src/base_es6_generator.js" {code_block=true class="line-numbers"}
+
 ### 容器
 
