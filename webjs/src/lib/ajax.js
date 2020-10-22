@@ -59,7 +59,7 @@ const requestCommon = (method, url, body, header) => {
  * @returns {Promise<unknown>}
  */
 const requestGet = (url, data, header) => {
-    if (undefined!==data) {
+    if (undefined!==data && null!==data) {
         url = url + "?" + hash.toGetString(data);
     }
     return requestCommon("GET", url, null, header);
@@ -69,21 +69,63 @@ const requestGet = (url, data, header) => {
 /**
  * Post
  * @param {String} url
- * @param {Object} [data]
+ * @param {Object|FormData} [data]
  * @param {Object} [header]
  * @returns {Promise<unknown>}
  */
 const requestPost = (url, data, header) => {
     let form = null;
-    if (undefined!==data) {
-        form = new FormData();
-        for (let key of Object.keys(data)) form.append(key, data[key]);
+    if (undefined!==data && null!==data) {
+        if (data instanceof FormData) {
+            form = data;
+        } else {
+            form = new FormData();
+            for (let key of Object.keys(data)) form.append(key, data[key]);
+        }
     }
     return requestCommon("POST", url, form, header);
 };
 
+class Requester {
+    /**
+     *
+     * @param {String} [prefixUrl]
+     * @param {Object} [defaultData]
+     * @param {Object} [defaultHeader]
+     */
+    constructor(prefixUrl, defaultData, defaultHeader) {
+        this.prefix = (undefined===prefixUrl || null===prefixUrl) ? "" : prefixUrl;
+        this.data = (undefined===defaultData || null===defaultData) ? {} : defaultData;
+        this.header = (undefined===defaultHeader || null===defaultHeader) ? {} : defaultHeader;
+    }
+
+    /**
+     * @param {String} url
+     * @param {Object} [data]
+     * @param {Object} [header]
+     * @returns {Promise<unknown>}
+     */
+    post(url, data, header) {
+        data = data || {};
+        header = header || {};
+        return requestPost(this.prefix + url, {...this.data, ...data}, {...this.header, ...header});
+    }
+
+    /**
+     * @param {String} url
+     * @param {Object} [data]
+     * @param {Object} [header]
+     * @returns {Promise<unknown>}
+     */
+    get(url, data, header) {
+        data = data || {};
+        header = header || {};
+        return requestGet(this.prefix + url, {...this.data, ...data}, {...this.header, ...header});
+    }
+}
 
 module.exports = {
     get: requestGet,
-    post: requestPost
+    post: requestPost,
+    Requester
 };
