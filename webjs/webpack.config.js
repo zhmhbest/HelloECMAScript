@@ -10,7 +10,8 @@ module.exports = function (argv) {
         // 编译后输出位置
         output: {
             path: path.resolve(root, "dist"),
-            filename: isDev ? "[name]@[hash].dev.js" : "[name].js"
+            // [name]@[hash].dev.js
+            filename: isDev ? "[name].dev.js" : "[name].js"
         }
     };
 };
