@@ -3,9 +3,18 @@
 ## initializer
 
 ```batch
-bash first.sh 
+REM Batch
+bash first.sh
 ```
 
 ```bash
-source first.sh 
+# Bash
+source first.sh
+```
+
+## Package
+
+```bash
+npm run build.pro
+npm run build.prod
 ```
