@@ -12,7 +12,8 @@ module.exports = {
   cookie: __webpack_require__(961),
   ajax: __webpack_require__(147),
   file: __webpack_require__(15),
-  form: __webpack_require__(622)
+  form: __webpack_require__(622),
+  date: __webpack_require__(219)
 };
 
 /***/ }),
@@ -340,8 +341,82 @@ module.exports = {
 
 /***/ }),
 
+/***/ 219:
+/***/ ((module) => {
+
+/**
+ * 日期格式化
+ * @param {Date|string} [toFormat]
+ * @param {string} [formatType]
+ * @returns {string}
+ */
+var formatDate = function formatDate(toFormat, formatType) {
+  if (undefined === toFormat) toFormat = new Date();else toFormat = toFormat instanceof Date ? toFormat : new Date(toFormat);
+  formatType = formatType || 'y-M-d h:m:s';
+  var buf = [];
+
+  for (var i = 0; i < formatType.length; i++) {
+    var ch = formatType.substr(i, 1);
+
+    switch (ch) {
+      case 'y':
+        buf.push(toFormat.getFullYear());
+        break;
+
+      case 'M':
+        buf.push(toFormat.getMonth() + 1);
+        break;
+
+      case 'd':
+        buf.push(toFormat.getDate());
+        break;
+
+      case 'h':
+        buf.push(toFormat.getHours());
+        break;
+
+      case 'm':
+        buf.push(toFormat.getMinutes());
+        break;
+
+      case 's':
+        buf.push(toFormat.getSeconds());
+        break;
+
+      case 'S':
+        buf.push(toFormat.getMilliseconds());
+        break;
+
+      default:
+        buf.push(ch);
+        break;
+    }
+  }
+
+  return buf.join('');
+};
+/**
+ * 时间戳
+ * @param {Date|string} d
+ * @returns {Number}
+ */
+
+
+var timestamp = function timestamp(d) {
+  return new Date(d).getTime();
+};
+
+module.exports = {
+  format: formatDate,
+  timestamp: timestamp
+};
+
+/***/ }),
+
 /***/ 15:
 /***/ ((module) => {
+
+var URL = window.URL || window.webkitURL;
 
 var fileLoader = function () {
   /** @type {function(FileList)} */
@@ -359,13 +434,46 @@ var fileLoader = function () {
   };
 }();
 /**
+ * 生成文件下载
+ * @param {Blob} blob
+ * @param {String} [filename]
+ */
+
+
+var fileDownloadBlob = function fileDownloadBlob(blob, filename) {
+  filename = filename || "file@" + new Date().getTime();
+  var element = document.createElement('a');
+  element.setAttribute('href', URL.createObjectURL(blob));
+  element.setAttribute('download', filename);
+  element.click();
+  element.remove();
+};
+/**
+ * 生成文件下载
+ * @param {String|Object} text
+ * @param {String} [filename]
+ */
+
+
+var fileDownloadText = function fileDownloadText(text, filename) {
+  var blob;
+
+  if (text instanceof Object) {
+    blob = new Blob([JSON.stringify(text, undefined, '    ')]);
+  } else {
+    blob = new Blob([text]);
+  }
+
+  fileDownloadBlob(blob, filename);
+};
+/**
  * @param {Blob} obj
  * @returns {String}
  */
 
 
 var createBlobURL = function createBlobURL(obj) {
-  return window.URL.createObjectURL(obj);
+  return URL.createObjectURL(obj);
 };
 /**
  * @param {File} f
@@ -412,6 +520,8 @@ var readFileBinary = function readFileBinary(f, callback) {
 
 module.exports = {
   loader: fileLoader,
+  download: fileDownloadBlob,
+  downloadText: fileDownloadText,
   createBlobURL: createBlobURL,
   readFileText: readFileText,
   readFileBase64: readFileBase64,
