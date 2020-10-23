@@ -18,3 +18,9 @@ source first.sh
 npm run build.pro
 npm run build.prod
 ```
+
+## referer
+
+```html
+<script src="https://zhmhbest.github.io/HelloECMAScript/webjs/dist/index.js"></script>
+```

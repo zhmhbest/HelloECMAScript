@@ -1,4 +1,3 @@
-// <script src="https://zhmhbest.github.io/HelloECMAScript/webjs/dist/index.js"></script>
 
 module.exports = {
     hash: require("./lib/hash"),
