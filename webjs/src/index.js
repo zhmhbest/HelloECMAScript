@@ -6,5 +6,6 @@ module.exports = {
     cookie: require("./lib/cookie"),
     ajax: require("./lib/ajax"),
     file: require("./lib/file"),
-    form: require("./lib/form")
+    form: require("./lib/form"),
+    date: require("./lib/date")
 };
