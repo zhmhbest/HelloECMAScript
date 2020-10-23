@@ -12,7 +12,7 @@ bash first.sh
 source first.sh
 ```
 
-## Package
+## Pack
 
 ```bash
 npm run build.pro
