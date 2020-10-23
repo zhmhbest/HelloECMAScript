@@ -1,3 +1,4 @@
+const URL = window.URL || window.webkitURL;
 
 const fileLoader = (() => {
     /** @type {function(FileList)} */
@@ -16,11 +17,42 @@ const fileLoader = (() => {
 
 
 /**
+ * 生成文件下载
+ * @param {Blob} blob
+ * @param {String} [filename]
+ */
+const fileDownloadBlob = (blob, filename) => {
+    filename = filename || "file@" + new Date().getTime();
+    const element = document.createElement('a');
+    element.setAttribute('href', URL.createObjectURL(blob));
+    element.setAttribute('download', filename);
+    element.click();
+    element.remove();
+};
+
+
+/**
+ * 生成文件下载
+ * @param {String|Object} text
+ * @param {String} [filename]
+ */
+const fileDownloadText = (text, filename) => {
+    let blob;
+    if (text instanceof Object) {
+        blob = new Blob([JSON.stringify(text,undefined, '    ')])
+    } else {
+        blob = new Blob([text])
+    }
+    fileDownloadBlob(blob, filename);
+};
+
+
+/**
  * @param {Blob} obj
  * @returns {String}
  */
 const createBlobURL = (obj) => {
-    return window.URL.createObjectURL(obj)
+    return URL.createObjectURL(obj)
 };
 
 
@@ -55,6 +87,8 @@ const readFileBinary = (f, callback) => {
 
 module.exports = {
     loader: fileLoader,
+    download: fileDownloadBlob,
+    downloadText: fileDownloadText,
     createBlobURL,
     readFileText,
     readFileBase64,
