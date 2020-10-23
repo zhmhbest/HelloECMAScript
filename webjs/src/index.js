@@ -1,6 +1,6 @@
 // <script src="https://zhmhbest.github.io/HelloECMAScript/webjs/dist/index.js"></script>
 
-zhmh = {
+module.exports = {
     hash: require("./lib/hash"),
     screen: require("./lib/screen"),
     cookie: require("./lib/cookie"),

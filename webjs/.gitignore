@@ -1,5 +1,8 @@
 node_modules/
 package.json
 package-lock.json
-dist/*.dev.js
-dist/test.*
+.babelrc
+dist/*
+!dist/*.js
+!dist/*.map
+dist/*.dev.*
