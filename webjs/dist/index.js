@@ -5,7 +5,6 @@ var zhmh;zhmh =
 /***/ 579:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-// <script src="https://zhmhbest.github.io/HelloECMAScript/webjs/dist/index.js"></script>
 module.exports = {
   hash: __webpack_require__(698),
   screen: __webpack_require__(603),
