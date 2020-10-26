@@ -15,7 +15,7 @@ source first.sh
 ## pack
 
 ```bash
-npm run build.pro
+npm run build.dev
 npm run build.prod
 ```
 
