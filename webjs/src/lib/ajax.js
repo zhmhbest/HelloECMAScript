@@ -94,33 +94,46 @@ class Requester {
      * @param {Object} [defaultHeader]
      */
     constructor(prefixUrl, defaultData, defaultHeader) {
-        this.prefix = (undefined===prefixUrl || null===prefixUrl) ? "" : prefixUrl;
-        this.data = (undefined===defaultData || null===defaultData) ? {} : defaultData;
-        this.header = (undefined===defaultHeader || null===defaultHeader) ? {} : defaultHeader;
+        this._prefix = (undefined===prefixUrl || null===prefixUrl) ? "" : prefixUrl;
+        this._data = (undefined===defaultData || null===defaultData) ? {} : defaultData;
+        this._header = (undefined===defaultHeader || null===defaultHeader) ? {} : defaultHeader;
+    }
+
+    get prefix() {
+        return this._prefix;
+    }
+    get data() {
+        return this._data;
+    }
+    get header() {
+        return this._header;
+    }
+    getImageSrc(url) {
+        return this._prefix + url + '?' + new Date().getTime();
     }
 
     /**
      * @param {String} url
      * @param {Object} [data]
      * @param {Object} [header]
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     post(url, data, header) {
         data = data || {};
         header = header || {};
-        return requestPost(this.prefix + url, {...this.data, ...data}, {...this.header, ...header});
+        return requestPost(this._prefix + url, {...this._data, ...data}, {...this._header, ...header});
     }
 
     /**
      * @param {String} url
      * @param {Object} [data]
      * @param {Object} [header]
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     get(url, data, header) {
         data = data || {};
         header = header || {};
-        return requestGet(this.prefix + url, {...this.data, ...data}, {...this.header, ...header});
+        return requestGet(this._prefix + url, {...this._data, ...data}, {...this._header, ...header});
     }
 }
 
