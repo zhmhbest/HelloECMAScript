@@ -22,5 +22,5 @@ npm run build.prod
 ## referer
 
 ```html
-<script src="https://zhmhbest.github.io/HelloECMAScript/webjs/dist/index.js"></script>
+<script src="https://zhmhbest.github.io/HelloECMAScript/webjs/dist/index.min.js"></script>
 ```
