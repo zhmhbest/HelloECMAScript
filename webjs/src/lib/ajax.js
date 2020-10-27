@@ -31,7 +31,7 @@ const requestBase = (method, url, body, preProcess, callback) => {
  * @returns {Promise}
  */
 const requestCommon = (method, url, body, header) => {
-    return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
         // <Promise>
         requestBase(method, url, body, req => {
             if (undefined===header) return;
@@ -40,6 +40,7 @@ const requestCommon = (method, url, body, header) => {
         }, (req, res) => {
             if (XMLHttpRequest.DONE === req.readyState) {
                 if (req.status >= 200 && req.status < 300 || 304 === req.status /* ReadCache */ ) {
+                    // resolve(res.response, res.responseType, res.getAllResponseHeaders());
                     resolve(res.response);
                 } else {
                     reject(new Error(res.statusText));
