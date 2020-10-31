@@ -11,12 +11,14 @@
 
 #### 修改目录
 
+设置环境变量`NODE_HOME`为Nodejs所在目录
+设置环境变量`NODE_PATH`为`%NODE_HOME%\bin\node_modules`
+
 ```batch
-mkdir bin & mkdir cache
-REM 全局包安装位置
-npm config set prefix %CD%\bin
-REM 包缓存位置
-npm config set cache %CD%\cache
+MKDIR "%NODE_HOME%\bin"
+MKDIR "%NODE_HOME%\cache"
+npm config set prefix %NODE_HOME%\bin
+npm config set cache %NODE_HOME%\cache
 ```
 
 #### 镜像设置

@@ -294,11 +294,12 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <h4 class="mume-header" id="%E4%BF%AE%E6%94%B9%E7%9B%AE%E5%BD%95">&#x4FEE;&#x6539;&#x76EE;&#x5F55;</h4>
 
-<pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token command"><span class="token keyword">mkdir</span> bin </span><span class="token operator">&amp;</span> <span class="token command"><span class="token keyword">mkdir</span> cache</span>
-<span class="token comment">REM &#x5168;&#x5C40;&#x5305;&#x5B89;&#x88C5;&#x4F4D;&#x7F6E;</span>
-<span class="token command"><span class="token keyword">npm</span> config set prefix <span class="token variable">%CD%</span>\bin</span>
-<span class="token comment">REM &#x5305;&#x7F13;&#x5B58;&#x4F4D;&#x7F6E;</span>
-<span class="token command"><span class="token keyword">npm</span> config set cache <span class="token variable">%CD%</span>\cache</span>
+<p>&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>NODE_HOME</code>&#x4E3A;Nodejs&#x6240;&#x5728;&#x76EE;&#x5F55;<br>
+&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>NODE_PATH</code>&#x4E3A;<code>%NODE_HOME%\bin\node_modules</code></p>
+<pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token command"><span class="token keyword">MKDIR</span> <span class="token string">&quot;%NODE_HOME%\bin&quot;</span></span>
+<span class="token command"><span class="token keyword">MKDIR</span> <span class="token string">&quot;%NODE_HOME%\cache&quot;</span></span>
+<span class="token command"><span class="token keyword">npm</span> config set prefix <span class="token variable">%NODE_HOME%</span>\bin</span>
+<span class="token command"><span class="token keyword">npm</span> config set cache <span class="token variable">%NODE_HOME%</span>\cache</span>
 </pre><h4 class="mume-header" id="%E9%95%9C%E5%83%8F%E8%AE%BE%E7%BD%AE">&#x955C;&#x50CF;&#x8BBE;&#x7F6E;</h4>
 
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">npm</span> config <span class="token keyword">set</span> registry https://registry.npm.taobao.org/
