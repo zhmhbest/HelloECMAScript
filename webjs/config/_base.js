@@ -1,3 +1,5 @@
+const packageInfo = require('../package.json');
+
 module.exports = (mode, operations) => {
     operations.setMinimize(1 === mode);
     operations.addOptions({
@@ -10,9 +12,9 @@ module.exports = (mode, operations) => {
     operations.addOutput('dist',(() => {
         switch (mode) {
             case 0:
-                return "[name].dev.js";
+                return `${packageInfo.name}-${packageInfo.version}.dev.js`;
             case 1:
-                return "[name].min.js";
+                return `${packageInfo.name}-${packageInfo.version}.min.js`;
         }
     })(), {
         library: 'zhmh',

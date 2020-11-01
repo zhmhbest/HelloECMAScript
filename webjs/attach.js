@@ -1,7 +1,8 @@
 const fs = require('fs');
 const [, , ...argv] = process.argv;
 const FilenamePackage = 'package.json';
-const currentPackage = JSON.parse(fs.readFileSync(FilenamePackage).toString());
+// const currentPackage = JSON.parse(fs.readFileSync(FilenamePackage).toString());
+const currentPackage = require('./package.json');
 
 for (let item of argv) {
     let sp = item.search(/=/); if (0===sp) continue;
