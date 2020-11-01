@@ -7,5 +7,6 @@ module.exports = {
     ajax: require("./lib/ajax"),
     file: require("./lib/file"),
     form: require("./lib/form"),
-    date: require("./lib/date")
+    date: require("./lib/date"),
+    ts: require("./lib/ts.ts")
 };
