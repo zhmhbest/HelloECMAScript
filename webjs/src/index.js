@@ -2,7 +2,7 @@ require("@babel/polyfill");  // 解决Promise
 
 module.exports = {
     hash: require("./lib/hash.ts"),
-    screen: require("./lib/screen"),
+    screen: require("./lib/screen.ts"),
 
     cookie: require("./lib/cookie"),
     ajax: require("./lib/ajax"),
