@@ -1,4 +1,4 @@
-const hash = require("./hash");
+const hash = require("./hash.ts");
 // console.log(0, XMLHttpRequest.UNSENT);
 // console.log(1, XMLHttpRequest.OPENED);
 // console.log(2, XMLHttpRequest.HEADERS_RECEIVED);
