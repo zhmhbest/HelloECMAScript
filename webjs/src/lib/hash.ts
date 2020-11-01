@@ -47,14 +47,15 @@ export function pushOnHashChange(
         event:HashChangeEvent
     ) => any
 ) {
-    if (undefined === window.onhashchange || null === window.onhashchange) {
+    // @ts-ignore
+    const preHCE: (ev: HashChangeEvent) => any = window.onhashchange;
+    if (undefined === preHCE || null === preHCE) {
         // 直接添加
         window.onhashchange = function (ev: HashChangeEvent) {
             fn(window.location.hash.substr(1), this, ev);
         }
     } else {
         // 方法链
-        const preHCE: (ev: HashChangeEvent) => any = window.onhashchange;
         window.onhashchange = function (ev: HashChangeEvent) {
             preHCE.call(this, ev);
             fn(window.location.hash.substr(1), this, ev);
