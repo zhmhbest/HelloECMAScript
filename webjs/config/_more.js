@@ -35,17 +35,17 @@ module.exports = (mode, operations) => {
                 skipLibCheck: false,            // 跳过声明文件的类型检查
 
                 strict: true,                   // 启用广泛的类型检查行为
-                noImplicitAny: false,           // 存在any类型的参数时报错
+                noImplicitAny: true,            // 存在any类型的参数时报错
                 noImplicitThis: true,           // 存在不明确的this时报错
                 strictFunctionTypes: true,      // 严格的函数指针检查
 
-                removeComments: true,           // 移除注释
+                removeComments: false,          // 移除注释
                 preserveConstEnums: true,       // 保留 const enums
                 sourceMap: true,
                 target: "ES2015",
                 module: "CommonJS",
             }
-        }, true
+        }
     );
     // 【ts】
     const tsMatcher = operations.addMatcher(

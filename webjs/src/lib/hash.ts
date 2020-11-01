@@ -9,6 +9,7 @@ export function toGetString(obj: object, sep?: string, eqs?: string): string {
     eqs = eqs || '=';
     const buffer: string[] = [];
     for (let key of Object.keys(obj)) {
+        // @ts-ignore
         let val: any = obj[key];
         buffer.push([key, encodeURIComponent(val)].join(eqs));
     }
@@ -37,8 +38,7 @@ export function parseGetString(str: string, sep?: string, eqs?: string): object 
 
 
 /**
- * Hash改变捕获
- * @param {function(HashChangeEvent, String)} fn
+ * Catch HashChange
  */
 export function pushOnHashChange(
     fn: (
