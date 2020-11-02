@@ -4,7 +4,7 @@
  * @param sep: Separator
  * @param eqs: Equal sign
  */
-export function toGetString(obj: object, sep?: string, eqs?: string): string {
+function toGetString(obj: object, sep?: string, eqs?: string): string {
     sep = sep || '&';
     eqs = eqs || '=';
     const buffer: string[] = [];
@@ -23,7 +23,7 @@ export function toGetString(obj: object, sep?: string, eqs?: string): string {
  * @param sep
  * @param eqs
  */
-export function parseGetString(str: string, sep?: string, eqs?: string): object {
+function parseGetString(str: string, sep?: string, eqs?: string): object {
     let buffer = Object();
     str = str.trim();
     if (0 === str.length) return buffer;
@@ -40,7 +40,7 @@ export function parseGetString(str: string, sep?: string, eqs?: string): object 
 /**
  * Catch HashChange
  */
-export function pushOnHashChange(
+function pushOnHashChange(
     fn: (
         hash:string,
         handlers:WindowEventHandlers,
@@ -62,3 +62,10 @@ export function pushOnHashChange(
         };
     }
 }
+
+
+export {
+    toGetString,
+    parseGetString,
+    pushOnHashChange,
+};

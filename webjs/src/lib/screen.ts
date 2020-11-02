@@ -2,7 +2,7 @@
 /**
  * 添加尺寸调整响应
  */
-export function pushOnScreenResize(
+function pushOnScreenResize(
     fn: (
         rect: {w: number, h: number},
         handlers: GlobalEventHandlers | null,
@@ -35,3 +35,8 @@ export function pushOnScreenResize(
         h: document.documentElement.clientHeight
     }, null, null);
 }
+
+
+export {
+    pushOnScreenResize
+};
