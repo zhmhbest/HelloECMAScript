@@ -90,3 +90,7 @@ yarn add <package_name>
 # 全局安装
 yarn global add <package_name>
 ```
+
+## CryptoJS
+
+@import "src/demo_crypto.js" {code_block=true class="line-numbers"}
