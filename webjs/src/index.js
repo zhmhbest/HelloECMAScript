@@ -1,4 +1,4 @@
-require("@babel/polyfill");  // 解决Promise
+// require("@babel/polyfill");  // 兼容低版本浏览器Promise
 
 module.exports = {
     hash: require("./lib/hash.ts"),

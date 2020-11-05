@@ -7,6 +7,7 @@ module.exports = (mode, operations) => {
                 ['@babel/preset-env', {targets: {ie: '8'}}]
                 // ['@babel/preset-env', {targets: {edge: "17", firefox: "60", chrome: "67", safari: "11.1"}}]
                 // ['@babel/preset-env', {targets: '> 1%, not dead'}]
+                // ['@babel/preset-env', {targets: '> 80%, not dead'}]
             ],
             plugins: [
                 ['@babel/plugin-proposal-object-rest-spread', {}],
@@ -42,7 +43,7 @@ module.exports = (mode, operations) => {
                 removeComments: false,          // 移除注释
                 preserveConstEnums: true,       // 保留 const enums
                 sourceMap: true,
-                target: "ES2015",
+                target: "ES2015",               // ES5 ES2015
                 module: "CommonJS",
             }
         }
@@ -53,5 +54,6 @@ module.exports = (mode, operations) => {
         /src/,
         /node_modules/
     );
-    tsMatcher('ts-loader');
+    tsMatcher('babel-loader');  // 再经过babel处理
+    tsMatcher('ts-loader');     // 先经过ts处理（后加先处理）
 };
