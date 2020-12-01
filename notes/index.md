@@ -5,13 +5,15 @@
 
 ## 概述
 
-按照语法划分
+### 按照语法划分
 
-- ECMAScript 5
-- ECMAScript 6
+- ECMAScript 2015
+- ECMAScript 2016
+- ECMAScript 2017
+- ECMAScript ...
 - TypeScript
 
-按照运行环境划分
+### 按照运行环境划分
 
 - WebJS
 - NodeJS

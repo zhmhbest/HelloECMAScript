@@ -41,8 +41,8 @@ npm config ls
 #### 初始化
 
 ```bash
-npm init
-# npm init -f
+# npm init
+npm init -f
 ```
 
 #### 包安装
@@ -91,6 +91,6 @@ yarn add <package_name>
 yarn global add <package_name>
 ```
 
-## CryptoJS
+## Demonstrates
 
-@import "src/demo_crypto.js" {code_block=true class="line-numbers"}
+@import "src.md"

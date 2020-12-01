@@ -9,14 +9,14 @@
 
 ```bash
 npm init -f
-npm i -D typescript
+npm -D i typescript
+npm -D i ts-node
 ```
 
 ### run
 
 ```bash
-npx tsc ?.ts
-node ?.js
+npx ts-node ?.js
 ```
 
 ## datatype
