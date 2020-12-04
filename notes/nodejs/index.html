@@ -274,35 +274,31 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#%E9%95%9C%E5%83%8F%E8%AE%BE%E7%BD%AE">&#x955C;&#x50CF;&#x8BBE;&#x7F6E;</a></li>
 </ul>
 </li>
-<li><a href="#npm-yarn">NPM &amp; YARN</a>
+<li><a href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8">&#x5305;&#x7BA1;&#x7406;&#x5668;</a>
 <ul>
-<li><a href="#npm">NPM</a>
-<ul>
-<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96">&#x521D;&#x59CB;&#x5316;</a></li>
-<li><a href="#%E5%8C%85%E5%AE%89%E8%A3%85">&#x5305;&#x5B89;&#x88C5;</a></li>
+<li><a href="#npm">NPM</a></li>
+<li><a href="#yarn">YARN</a></li>
 </ul>
 </li>
-<li><a href="#yarn">YARN</a>
-<ul>
-<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96-1">&#x521D;&#x59CB;&#x5316;</a></li>
-<li><a href="#%E5%8C%85%E5%AE%89%E8%A3%85-1">&#x5305;&#x5B89;&#x88C5;</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#cryptojs">CryptoJS</a></li>
+<li><a href="#demonstrates">Demonstrates</a></li>
 </ul>
 </li>
 </ul>
 <h2 class="mume-header" id="%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">&#x73AF;&#x5883;&#x914D;&#x7F6E;</h2>
 
-<p>&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>NODE_HOME</code>&#x4E3A;Nodejs&#x6240;&#x5728;&#x76EE;&#x5F55;<br>
-&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>NODE_PATH</code>&#x4E3A;<code>%NODE_HOME%\bin\node_modules</code><br>
-&#x6DFB;&#x52A0;<code>%NODE_HOME%</code>&#x3001;<code>%NODE_HOME%\bin</code>&#x5230;<code>PATH</code>&#x4E2D;&#x3002;</p>
+<ul>
+<li>&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>NODE_HOME</code>&#x4E3A;Nodejs&#x6240;&#x5728;&#x76EE;&#x5F55;</li>
+<li>&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>NODE_PATH</code>&#x4E3A;<code>%NODE_HOME%\bin\node_modules</code></li>
+<li>&#x6DFB;&#x52A0;<code>%NODE_HOME%\bin</code>&#x5230;<code>PATH</code>&#x4E2D;</li>
+</ul>
 <pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token command"><span class="token keyword">MKDIR</span> <span class="token string">&quot;%NODE_HOME%\bin&quot;</span></span>
 <span class="token command"><span class="token keyword">MKDIR</span> <span class="token string">&quot;%NODE_HOME%\cache&quot;</span></span>
 <span class="token command"><span class="token keyword">npm</span> config set prefix <span class="token variable">%NODE_HOME%</span>\bin</span>
 <span class="token command"><span class="token keyword">npm</span> config set cache <span class="token variable">%NODE_HOME%</span>\cache</span>
+<span class="token command"><span class="token keyword">COPY</span> <span class="token parameter attr-name">/y</span> <span class="token string">&quot;%NODE_HOME%\node.exe&quot;</span> <span class="token string">&quot;%NODE_HOME%\bin\node.exe&quot;</span></span>
+&quot;%NODE_HOME%\npm&quot; -g i npm yarn
+<span class="token command"><span class="token keyword">npm</span> <span class="token parameter attr-name">-v</span></span>
+<span class="token command"><span class="token keyword">yarn</span> <span class="token parameter attr-name">-v</span></span>
 </pre><h3 class="mume-header" id="%E5%85%B3%E8%81%94js%E5%90%AF%E5%8A%A8">&#x5173;&#x8054;JS&#x542F;&#x52A8;</h3>
 
 <pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token comment">REM &#x5728;&#x7BA1;&#x7406;&#x5458;&#x547D;&#x4EE4;&#x7A97;&#x53E3;&#x4E2D;&#x8F93;&#x5165;</span>
@@ -313,38 +309,29 @@ pre[data-line] .line-highlight[data-end]:after {
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">npm</span> config <span class="token keyword">set</span> registry https://registry.npm.taobao.org/
 <span class="token function">npm</span> config <span class="token keyword">set</span> ELECTRON_MIRROR https://npm.taobao.org/mirrors/electron/
 <span class="token function">npm</span> config <span class="token function">ls</span>
-</pre><h2 class="mume-header" id="npm-yarn">NPM &amp; YARN</h2>
+</pre><h2 class="mume-header" id="%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8">&#x5305;&#x7BA1;&#x7406;&#x5668;</h2>
 
 <h3 class="mume-header" id="npm">NPM</h3>
 
-<h4 class="mume-header" id="%E5%88%9D%E5%A7%8B%E5%8C%96">&#x521D;&#x59CB;&#x5316;</h4>
-
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># npm init</span>
 <span class="token function">npm</span> init -f
-</pre><h4 class="mume-header" id="%E5%8C%85%E5%AE%89%E8%A3%85">&#x5305;&#x5B89;&#x88C5;</h4>
 
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x6839;&#x636E;package.json&#x81EA;&#x52A8;&#x5B89;&#x88C5;</span>
-<span class="token function">npm</span> <span class="token function">install</span>
+<span class="token comment"># &#x5B89;&#x88C5;</span>
+<span class="token function">npm</span> i                   <span class="token comment"># &#x6839;&#x636E;package.json&#x81EA;&#x52A8;&#x5B89;&#x88C5;</span>
+<span class="token function">npm</span> -D i <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span> <span class="token comment"># &#x5F00;&#x53D1;&#x73AF;&#x5883;</span>
+<span class="token function">npm</span> -S i <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span> <span class="token comment"># &#x8FD0;&#x884C;&#x73AF;&#x5883;</span>
+<span class="token function">npm</span> -g i <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span> <span class="token comment"># &#x5168;&#x5C40;&#x5B89;&#x88C5;</span>
 
-<span class="token comment"># &#x5F53;&#x524D;&#x5F00;&#x53D1;&#x73AF;&#x5883;</span>
-<span class="token function">npm</span> -D i <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
-
-<span class="token comment"># &#x5F53;&#x524D;&#x8FD0;&#x884C;&#x4F9D;&#x8D56;&#x73AF;&#x5883;</span>
-<span class="token function">npm</span> -S i <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
-
-<span class="token comment"># &#x5168;&#x5C40;&#x5B89;&#x88C5;</span>
-<span class="token function">npm</span> -g i <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+<span class="token comment"># &#x5378;&#x8F7D;</span>
+<span class="token function">npm</span> un <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+<span class="token function">npm</span> -D un <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+<span class="token function">npm</span> -S un <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
+<span class="token function">npm</span> -g un <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
 </pre><h3 class="mume-header" id="yarn">YARN</h3>
 
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x5168;&#x5C40;&#x5B89;&#x88C5;yarn</span>
-<span class="token function">npm</span> -g i yarn
-yarn --version
-</pre><h4 class="mume-header" id="%E5%88%9D%E5%A7%8B%E5%8C%96-1">&#x521D;&#x59CB;&#x5316;</h4>
-
 <pre data-role="codeBlock" data-info="bash" class="language-bash">yarn init
-</pre><h4 class="mume-header" id="%E5%8C%85%E5%AE%89%E8%A3%85-1">&#x5305;&#x5B89;&#x88C5;</h4>
 
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># &#x6839;&#x636E;package.json&#x81EA;&#x52A8;&#x5B89;&#x88C5;</span>
+<span class="token comment"># &#x6839;&#x636E;package.json&#x81EA;&#x52A8;&#x5B89;&#x88C5;</span>
 yarn <span class="token function">install</span>
 
 <span class="token comment"># &#x5F53;&#x524D;&#x5F00;&#x53D1;&#x73AF;&#x5883;</span>
@@ -355,67 +342,13 @@ yarn add <span class="token operator">&lt;</span>package_name<span class="token 
 
 <span class="token comment"># &#x5168;&#x5C40;&#x5B89;&#x88C5;</span>
 yarn global add <span class="token operator">&lt;</span>package_name<span class="token operator">&gt;</span>
-</pre><h2 class="mume-header" id="cryptojs">CryptoJS</h2>
+</pre><h2 class="mume-header" id="demonstrates">Demonstrates</h2>
 
-<pre data-role="codeBlock" data-info="js code_block=true class=&quot;line-numbers&quot;" class="language-javascript line-numbers"><span class="token comment">// npm -g i crypto-js</span>
-<span class="token keyword">const</span> CryptoJS <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;crypto-js&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<ul>
+<li><a href="src/demo_crypto.js">demo_crypto.js</a></li>
+<li><a href="src/demo_file.js">demo_file.js</a></li>
+</ul>
 
-<span class="token comment">// MD5</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>CryptoJS<span class="token punctuation">.</span><span class="token constant">MD5</span><span class="token punctuation">(</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 202cb962ac59075b964b07152d234b70</span>
-
-<span class="token comment">// SHA256</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>CryptoJS<span class="token punctuation">.</span><span class="token constant">SHA256</span><span class="token punctuation">(</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3</span>
-
-<span class="token comment">// SHA512</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>CryptoJS<span class="token punctuation">.</span><span class="token constant">SHA512</span><span class="token punctuation">(</span><span class="token string">&quot;123&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// 3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2</span>
-
-<span class="token comment">// AES</span>
-<span class="token keyword">class</span> <span class="token class-name">SimplyAES</span> <span class="token punctuation">{</span>
-    <span class="token comment">/**
-     * @param {string} key   16Bytes &#x5BC6;&#x94A5;
-     * @param {string} [iv]  16Bytes &#x504F;&#x79FB;
-     */</span>
-    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> iv</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">const</span> zeros <span class="token operator">=</span> <span class="token string">&apos;00000000000000000000000000000000&apos;</span><span class="token punctuation">;</span>
-        key <span class="token operator">=</span> <span class="token punctuation">(</span>undefined <span class="token operator">===</span> key<span class="token punctuation">)</span> <span class="token operator">?</span> zeros <span class="token punctuation">:</span> key<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span> <span class="token operator">+</span> zeros<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">16</span> <span class="token operator">-</span> key<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        iv <span class="token operator">=</span> <span class="token punctuation">(</span>undefined <span class="token operator">===</span> iv<span class="token punctuation">)</span> <span class="token operator">?</span> zeros <span class="token punctuation">:</span> iv<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span> <span class="token operator">+</span> zeros<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">32</span> <span class="token operator">-</span> iv<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>_key <span class="token operator">=</span> CryptoJS<span class="token punctuation">.</span>enc<span class="token punctuation">.</span>Utf8<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>_cfg <span class="token operator">=</span> <span class="token punctuation">{</span>
-            iv<span class="token punctuation">:</span> CryptoJS<span class="token punctuation">.</span>enc<span class="token punctuation">.</span>Hex<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>iv<span class="token punctuation">)</span><span class="token punctuation">,</span> 
-            mode<span class="token punctuation">:</span> CryptoJS<span class="token punctuation">.</span>mode<span class="token punctuation">.</span><span class="token constant">CBC</span><span class="token punctuation">,</span> <span class="token comment">// AES-128-CBC</span>
-            padding<span class="token punctuation">:</span> CryptoJS<span class="token punctuation">.</span>pad<span class="token punctuation">.</span>Pkcs7
-        <span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">encrypt</span><span class="token punctuation">(</span><span class="token parameter">text</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> CryptoJS<span class="token punctuation">.</span>enc<span class="token punctuation">.</span>Base64<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>
-            CryptoJS<span class="token punctuation">.</span><span class="token constant">AES</span><span class="token punctuation">.</span><span class="token function">encrypt</span><span class="token punctuation">(</span>
-                CryptoJS<span class="token punctuation">.</span>enc<span class="token punctuation">.</span>Utf8<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">,</span> 
-                <span class="token keyword">this</span><span class="token punctuation">.</span>_key<span class="token punctuation">,</span> 
-                <span class="token keyword">this</span><span class="token punctuation">.</span>_cfg
-            <span class="token punctuation">)</span><span class="token punctuation">.</span>ciphertext
-        <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">decrypt</span><span class="token punctuation">(</span><span class="token parameter">text</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> CryptoJS<span class="token punctuation">.</span>enc<span class="token punctuation">.</span>Utf8<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>
-            CryptoJS<span class="token punctuation">.</span><span class="token constant">AES</span><span class="token punctuation">.</span><span class="token function">decrypt</span><span class="token punctuation">(</span>
-                text<span class="token punctuation">,</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span>_key<span class="token punctuation">,</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span>_cfg
-            <span class="token punctuation">)</span>
-        <span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-aes1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimplyAES</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5BC6;&#x94A5;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-aes2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimplyAES</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5BC6;&#x94A5;1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-aes3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimplyAES</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5BC6;&#x94A5;2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-test <span class="token operator">=</span> aes1<span class="token punctuation">.</span><span class="token function">encrypt</span><span class="token punctuation">(</span><span class="token string">&quot;&#x5BC6;&#x6587;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;aes1&apos;</span><span class="token punctuation">,</span> test<span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;aes2&apos;</span><span class="token punctuation">,</span> aes2<span class="token punctuation">.</span><span class="token function">decrypt</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&apos;aes3&apos;</span><span class="token punctuation">,</span> aes3<span class="token punctuation">.</span><span class="token function">decrypt</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
       </div>
       
       
