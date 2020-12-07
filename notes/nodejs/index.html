@@ -288,7 +288,12 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <ul>
 <li>&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>NODE_HOME</code>&#x4E3A;Nodejs&#x6240;&#x5728;&#x76EE;&#x5F55;</li>
-<li>&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>NODE_PATH</code>&#x4E3A;<code>%NODE_HOME%\bin\node_modules</code></li>
+<li>&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>NODE_PATH</code>&#x4E3A;
+<ul>
+<li><code>%NODE_HOME%\bin\node_modules</code></li>
+<li><code>%NODE_HOME%\bin\yarn_modules\node_modules</code></li>
+</ul>
+</li>
 <li>&#x6DFB;&#x52A0;<code>%NODE_HOME%\bin</code>&#x5230;<code>PATH</code>&#x4E2D;</li>
 </ul>
 <pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token comment">REM &#x51C6;&#x5907;&#x76EE;&#x5F55;</span>

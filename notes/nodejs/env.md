@@ -1,6 +1,8 @@
 
 - 设置环境变量`NODE_HOME`为Nodejs所在目录
-- 设置环境变量`NODE_PATH`为`%NODE_HOME%\bin\node_modules`
+- 设置环境变量`NODE_PATH`为
+  - `%NODE_HOME%\bin\node_modules`
+  - `%NODE_HOME%\bin\yarn_modules\node_modules`
 - 添加`%NODE_HOME%\bin`到`PATH`中
 
 ```batch
