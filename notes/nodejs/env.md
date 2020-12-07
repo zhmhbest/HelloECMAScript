@@ -4,19 +4,31 @@
 - 添加`%NODE_HOME%\bin`到`PATH`中
 
 ```batch
+REM 准备目录
 MKDIR "%NODE_HOME%\bin"
+MKDIR "%NODE_HOME%\bin\yarn_modules"
 MKDIR "%NODE_HOME%\cache"
+MKDIR "%NODE_HOME%\cache\npm"
+MKDIR "%NODE_HOME%\cache\yarn"
+
+REM 配置NPM
 npm config set prefix %NODE_HOME%\bin
-npm config set cache %NODE_HOME%\cache
+npm config set cache %NODE_HOME%\cache\npm
+npm config ls
 COPY /y "%NODE_HOME%\node.exe" "%NODE_HOME%\bin\node.exe"
 
 REM 此处可以先配置镜像
-"%NODE_HOME%\npm" -g i npm yarn
-npm -v
-yarn -v
 
-REM 配置Yarn
+REM 配置YARN
+"%NODE_HOME%\npm" -g i yarn
+yarn -v
+REM %AppData%\..\Local\Yarn\Data
+REM %AppData%\..\Local\Yarn\Cache
 yarn config set prefix %NODE_HOME%
+yarn config set global-folder %NODE_HOME%\bin\yarn_modules
+yarn config set cache-folder %NODE_HOME%\cache\yarn
+yarn config list
+yarn global add npm
 ```
 
 ### 关联JS启动
