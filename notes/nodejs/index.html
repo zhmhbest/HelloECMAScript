@@ -296,9 +296,14 @@ pre[data-line] .line-highlight[data-end]:after {
 <span class="token command"><span class="token keyword">npm</span> config set prefix <span class="token variable">%NODE_HOME%</span>\bin</span>
 <span class="token command"><span class="token keyword">npm</span> config set cache <span class="token variable">%NODE_HOME%</span>\cache</span>
 <span class="token command"><span class="token keyword">COPY</span> <span class="token parameter attr-name">/y</span> <span class="token string">&quot;%NODE_HOME%\node.exe&quot;</span> <span class="token string">&quot;%NODE_HOME%\bin\node.exe&quot;</span></span>
+
+<span class="token comment">REM &#x6B64;&#x5904;&#x53EF;&#x4EE5;&#x5148;&#x914D;&#x7F6E;&#x955C;&#x50CF;</span>
 &quot;%NODE_HOME%\npm&quot; -g i npm yarn
 <span class="token command"><span class="token keyword">npm</span> <span class="token parameter attr-name">-v</span></span>
 <span class="token command"><span class="token keyword">yarn</span> <span class="token parameter attr-name">-v</span></span>
+
+<span class="token comment">REM &#x914D;&#x7F6E;Yarn</span>
+<span class="token command"><span class="token keyword">yarn</span> config set prefix <span class="token variable">%NODE_HOME%</span></span>
 </pre><h3 class="mume-header" id="%E5%85%B3%E8%81%94js%E5%90%AF%E5%8A%A8">&#x5173;&#x8054;JS&#x542F;&#x52A8;</h3>
 
 <pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token comment">REM &#x5728;&#x7BA1;&#x7406;&#x5458;&#x547D;&#x4EE4;&#x7A97;&#x53E3;&#x4E2D;&#x8F93;&#x5165;</span>

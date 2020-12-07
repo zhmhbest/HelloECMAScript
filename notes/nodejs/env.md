@@ -9,9 +9,14 @@ MKDIR "%NODE_HOME%\cache"
 npm config set prefix %NODE_HOME%\bin
 npm config set cache %NODE_HOME%\cache
 COPY /y "%NODE_HOME%\node.exe" "%NODE_HOME%\bin\node.exe"
+
+REM 此处可以先配置镜像
 "%NODE_HOME%\npm" -g i npm yarn
 npm -v
 yarn -v
+
+REM 配置Yarn
+yarn config set prefix %NODE_HOME%
 ```
 
 ### 关联JS启动
