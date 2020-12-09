@@ -44,6 +44,9 @@ yarn -D add <package_name>
 # 当前运行依赖环境
 yarn add <package_name>
 
+# 卸载
+yarn remove <package_name>
+
 # 全局安装
 yarn global add <package_name>
 ```
