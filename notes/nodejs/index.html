@@ -271,6 +271,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <li><a href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">&#x73AF;&#x5883;&#x914D;&#x7F6E;</a>
 <ul>
 <li><a href="#%E5%85%B3%E8%81%94js%E5%90%AF%E5%8A%A8">&#x5173;&#x8054;JS&#x542F;&#x52A8;</a></li>
+<li><a href="#%E5%85%B3%E8%81%94ts%E5%90%AF%E5%8A%A8">&#x5173;&#x8054;TS&#x542F;&#x52A8;</a></li>
 <li><a href="#%E9%95%9C%E5%83%8F%E8%AE%BE%E7%BD%AE">&#x955C;&#x50CF;&#x8BBE;&#x7F6E;</a></li>
 </ul>
 </li>
@@ -325,7 +326,14 @@ pre[data-line] .line-highlight[data-end]:after {
 
 <pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token comment">REM &#x5728;&#x7BA1;&#x7406;&#x5458;&#x547D;&#x4EE4;&#x7A97;&#x53E3;&#x4E2D;&#x8F93;&#x5165;</span>
 <span class="token comment">REM C:\Windows\System32\CScript.exe &quot;%1&quot; %*</span>
-<span class="token command"><span class="token keyword">reg</span> add <span class="token string">&quot;HKCR\JSFile\Shell\Open\Command&quot;</span> <span class="token parameter attr-name">/f</span> <span class="token parameter attr-name">/ve</span> <span class="token parameter attr-name">/t</span> REG_SZ <span class="token parameter attr-name">/d</span> <span class="token string">&quot;\&quot;</span><span class="token variable">%NODE_HOME%</span>\node.exe\<span class="token string">&quot; \&quot;</span><span class="token variable">%1</span>\<span class="token string">&quot; %*&quot;</span></span>
+<span class="token command"><span class="token keyword">reg</span> add <span class="token string">&quot;HKCR\JSFile\Shell\Open\Command&quot;</span> <span class="token parameter attr-name">/f</span> <span class="token parameter attr-name">/ve</span> <span class="token parameter attr-name">/t</span> REG_SZ <span class="token parameter attr-name">/d</span> <span class="token string">&quot;\&quot;</span><span class="token variable">%NODE_HOME%</span>\bin\node.exe\<span class="token string">&quot; \&quot;</span><span class="token variable">%1</span>\<span class="token string">&quot; %*&quot;</span></span>
+</pre><h3 class="mume-header" id="%E5%85%B3%E8%81%94ts%E5%90%AF%E5%8A%A8">&#x5173;&#x8054;TS&#x542F;&#x52A8;</h3>
+
+<pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token command"><span class="token keyword">yarn</span> global add typescript ts-node</span>
+<span class="token comment">REM &#x5728;&#x7BA1;&#x7406;&#x5458;&#x547D;&#x4EE4;&#x7A97;&#x53E3;&#x4E2D;&#x8F93;&#x5165;</span>
+<span class="token command"><span class="token keyword">reg</span> add <span class="token string">&quot;HKCR\.ts&quot;</span> <span class="token parameter attr-name">/f</span> <span class="token parameter attr-name">/ve</span> <span class="token parameter attr-name">/t</span> REG_SZ <span class="token parameter attr-name">/d</span> <span class="token string">&quot;TSFile&quot;</span></span>
+<span class="token command"><span class="token keyword">reg</span> add <span class="token string">&quot;HKCR\TSFile\DefaultIcon&quot;</span> <span class="token parameter attr-name">/f</span> <span class="token parameter attr-name">/ve</span> <span class="token parameter attr-name">/t</span> REG_SZ <span class="token parameter attr-name">/d</span> <span class="token string">&quot;\&quot;</span><span class="token variable">%NODE_HOME%</span>\bin\node.exe\<span class="token string">&quot;&quot;</span></span>
+<span class="token command"><span class="token keyword">reg</span> add <span class="token string">&quot;HKCR\TSFile\Shell\Open\Command&quot;</span> <span class="token parameter attr-name">/f</span> <span class="token parameter attr-name">/ve</span> <span class="token parameter attr-name">/t</span> REG_SZ <span class="token parameter attr-name">/d</span> <span class="token string">&quot;\&quot;</span><span class="token variable">%NODE_HOME%</span>\bin\ts-node.cmd\<span class="token string">&quot; \&quot;</span><span class="token variable">%1</span>\<span class="token string">&quot; %*&quot;</span></span>
 </pre><h3 class="mume-header" id="%E9%95%9C%E5%83%8F%E8%AE%BE%E7%BD%AE">&#x955C;&#x50CF;&#x8BBE;&#x7F6E;</h3>
 
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">npm</span> config <span class="token keyword">set</span> registry https://registry.npm.taobao.org/
