@@ -8,24 +8,27 @@ const path = require("path");
  */
 /**
  * 枚举目录下所有文件和文件夹
- * @param {string} location 
- * @param {ReadDirectoryCallback} callback 
+ * @param {string} location
+ * @param {ReadDirectoryCallback} callback
  */
 const openDirectory = (location, callback) => {
     try {
         const stat = fs.statSync(location);
         if(!stat.isDirectory()) return false;
-        callback(location, stat);
+        callback(location.replace(/\\/g, '/'), stat);
     } catch(err) { return false }
-    const files = fs.readdirSync(location);
-    for (let file of files) {
-        const name = path.join(location, file);
-        const stat = fs.statSync(name);
-        callback(name, stat);
-        if (stat.isDirectory()) {
-            openDirectory(name, callback);
+    const recursion = (loc) => {
+        const files = fs.readdirSync(loc);
+        for (let file of files) {
+            const name = path.join(loc, file);
+            const stat = fs.statSync(name);
+            callback(name.replace(/\\/g, '/'), stat);
+            if (stat.isDirectory()) {
+                recursion(name);
+            }
         }
-    }
+    };
+    recursion(location);
     return true;
 }
 
