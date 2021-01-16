@@ -47,7 +47,7 @@ yarn add <package_name>
 # 卸载
 yarn remove <package_name>
 
-# 全局安装
+# 全局安装（不建议使用）
 yarn global add <package_name>
 ```
 

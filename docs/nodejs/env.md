@@ -2,13 +2,11 @@
 - 设置环境变量`NODE_HOME`为Nodejs所在目录
 - 设置环境变量`NODE_PATH`为
   - `%NODE_HOME%\bin\node_modules`
-  - `%NODE_HOME%\bin\yarn_modules\node_modules`
 - 添加`%NODE_HOME%\bin`到`PATH`中
 
 ```batch
 REM 准备目录
 MKDIR "%NODE_HOME%\bin"
-MKDIR "%NODE_HOME%\bin\yarn_modules"
 MKDIR "%NODE_HOME%\cache"
 MKDIR "%NODE_HOME%\cache\npm"
 MKDIR "%NODE_HOME%\cache\yarn"
@@ -20,17 +18,14 @@ npm config ls
 COPY /y "%NODE_HOME%\node.exe" "%NODE_HOME%\bin\node.exe"
 
 REM 此处可以先配置镜像
+"%NODE_HOME%\npm" -g i npm
+"%NODE_HOME%\npm" -g i yarn
 
 REM 配置YARN
-"%NODE_HOME%\npm" -g i yarn
-yarn -v
-REM %AppData%\..\Local\Yarn\Data
-REM %AppData%\..\Local\Yarn\Cache
 yarn config set prefix %NODE_HOME%
-yarn config set global-folder %NODE_HOME%\bin\yarn_modules
+yarn config set global-folder %NODE_HOME%\cache\modules
 yarn config set cache-folder %NODE_HOME%\cache\yarn
 yarn config list
-yarn global add npm
 ```
 
 ### 关联JS启动
@@ -44,7 +39,7 @@ reg add "HKCR\JSFile\Shell\Open\Command" /f /ve /t REG_SZ /d "\"%NODE_HOME%\bin\
 ### 关联TS启动
 
 ```batch
-yarn global add typescript ts-node
+npm -g i typescript ts-node
 REM 在管理员命令窗口中输入
 reg add "HKCR\.ts" /f /ve /t REG_SZ /d "TSFile"
 reg add "HKCR\TSFile\DefaultIcon" /f /ve /t REG_SZ /d "\"%NODE_HOME%\bin\node.exe\""
