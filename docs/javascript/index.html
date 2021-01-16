@@ -265,24 +265,8 @@ pre[data-line] .line-highlight[data-end]:after {
 <script src="https://zhmhbest.gitee.io/hellomathematics/style/index.js"></script>
 <h1 class="mume-header" id="javascriptindexhtml"><a href="../index.html">Javascript</a></h1>
 
+<script src="../gotoRepository.js"></script>
 <p><a href="javascript:gotoRepository(&apos;src&apos;)">&#x67E5;&#x770B;&#x4ED3;&#x5E93;</a></p>
-<script>
-function gotoRepository(source) {
-    let matcher = window.location.host.match(/.+(?=\.github\.io$)/);
-    if (
-        null !== matcher
-    ) {
-        const pathdir = 'docs';
-        const pathname = window.location.pathname;
-        const username = matcher[0];
-        const pos = pathname.indexOf('/', 1);
-        const repository = pathname.substr(1, pos - 1);
-        const sub = pathname.substr(pos, pathname.length - pos);
-        const path = sub.match(/.+(?=\/.+?\.html$)/)[0];
-        console.log(`https://github.com/${username}/${repository}/tree/master/${pathdir}${path}/${source}`);
-    }
-}
-</script>
 
       </div>
       
