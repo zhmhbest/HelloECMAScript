@@ -18,7 +18,7 @@
 - WebJS
 - NodeJS
 
-## [Base](base/index.html)
+## [Javascript](javascript/index.html)
 
 ## [Typescript](typescript/index.html)
 
