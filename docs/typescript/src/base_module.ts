@@ -1,5 +1,6 @@
-import theModule = require('./base_moduleContent');
-console.log(theModule.PI);
-theModule.sayHello();
-let obj = new theModule.People("Peter", false, 12);
-obj.say();
+import { count, plusCount } from "./base_module_es6";
+
+// ES6 模块保留的是引用
+console.log(count);
+plusCount();
+console.log(count);

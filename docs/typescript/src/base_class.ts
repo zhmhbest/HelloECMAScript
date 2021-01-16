@@ -1,25 +1,20 @@
-export const PI : number = 3.1415926;
 
-export function sayHello() : void {
-    console.log('Hello');
+interface Animal {
+    getAge(): number;
+    setAge(age: number);
 }
 
-export interface Animal {
-    getAge() : number;
-    setAge(age : number);
-}
-
-export abstract class Mammal implements Animal {
+abstract class Mammal implements Animal {
     // private readonly LivingPlace: string;
     protected gender: boolean;
     protected age: number;
     public abstract getAge(): number;
     public abstract setAge(age: number);
     public abstract getGender(): boolean;
-    public abstract setGender(gender : boolean);
+    public abstract setGender(gender: boolean);
 }
 
-export class People extends Mammal {
+class People extends Mammal {
     protected name: string;
     public constructor(name: string, gender: boolean, age: number) {
         super();
@@ -34,6 +29,9 @@ export class People extends Mammal {
     public getAge(): number { return this.age; }
     public setAge(age: number) { this.age = age; }
     public say(): void {
-        console.log(this.name + ", " + (this.gender?"male":"female") + ", " + this.age);
+        console.log(this.name + ", " + (this.gender ? "male" : "female") + ", " + this.age);
     }
 }
+
+let obj = new People("Peter", false, 12);
+obj.say();
