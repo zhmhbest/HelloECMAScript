@@ -51,5 +51,6 @@ yarn remove <package_name>
 yarn global add <package_name>
 ```
 
+## <a href="javascript:gotoRepository('src')">查看仓库</a>
+
 <script src="../gotoRepository.js"></script>
-<a href="javascript:gotoRepository('src')"><h2>查看仓库</h2></a>
