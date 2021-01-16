@@ -4,4 +4,4 @@
 # [Javascript](../index.html)
 
 <script src="../gotoRepository.js"></script>
-<a href="javascript:gotoRepository('src')">查看仓库</a>
+<a href="javascript:gotoRepository('src')"><h2>查看仓库</h2></a>

@@ -51,6 +51,5 @@ yarn remove <package_name>
 yarn global add <package_name>
 ```
 
-## Demonstrates
-
-@import "src.md"
+<script src="../gotoRepository.js"></script>
+<a href="javascript:gotoRepository('src')"><h2>查看仓库</h2></a>
