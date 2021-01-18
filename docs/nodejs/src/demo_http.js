@@ -35,7 +35,8 @@ const start = (host, port, arrayController, defaultController) => {
 const controllers = [];
 controllers.push({
     test: /^\/$/,
-    callback: (req, res) => {
+    callback: function (req, res) {
+        console.log(this);
         res.write("Hello");
         res.end();
     }
