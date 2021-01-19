@@ -16,7 +16,7 @@ const start = (host, port, arrayController, defaultController) => {
     port = port || 9527;
     arrayController = arrayController || [];
     const server = http.createServer((req, res) => {
-        console.log(req.url);
+        console.log(`${req.method} ${req.url}`);
         for (let item of arrayController) {
             if (null !== req.url.match(item.test)) {
                 item.callback(req, res);
@@ -41,7 +41,21 @@ controllers.push({
         res.end();
     }
 });
-
+controllers.push({
+    test: /^\/favicon.ico$/,
+    callback: function (req, res) {
+        res.end();
+    }
+});
+controllers.push({
+    test: /^\/maven2(\/|$)/,
+    callback: function (req, res) {
+        const url = req.url;
+        const pathname = (url.match(/(?<=^\/maven2)\/.*/) || ['/'])[0];
+        res.write(pathname);
+        res.end();
+    }
+});
 start(undefined, undefined, controllers, (req, res) => {
     res.write(req.url);
     res.end();
