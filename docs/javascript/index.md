@@ -16,6 +16,8 @@ const PI = 3.1415926;
 
 ### 自定义类型
 
+#### 定义联合体
+
 ```js
 /**
  * @typedef {string|number} myType
@@ -25,6 +27,8 @@ let x;
 x = 123;
 x = "abc";
 ```
+
+#### 定义结构体
 
 ```js
 /**
@@ -39,7 +43,18 @@ pos.y = 768;
 console.log(pos);
 ```
 
-### 注释已有函数
+#### 定义回调函数
+
+```js
+/**
+ * @callback Callback
+ * @param {string} name
+ * ...
+ * @return {number}
+ */
+```
+
+### 注释函数
 
 ```js
 /**
@@ -53,17 +68,6 @@ const sayHello = (name, age) => {
     age = age || 0;
     console.log(`${name} ${age}: Hello!`);
 }
-```
-
-### 定义回调函数
-
-```js
-/**
- * @callback Callback
- * @param {string} name
- * ...
- * @return {number}
- */
 ```
 
 ## <a href="javascript:gotoRepository('src')">查看仓库</a>
