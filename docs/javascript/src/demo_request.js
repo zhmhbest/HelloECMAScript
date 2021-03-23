@@ -33,7 +33,7 @@
 };
 /**
  * @param {string} url
- * @param {string} method
+ * @param {string} [method]
  * @param {XMLHttpRequestResponseType} [type]
  * @param {BodyInit | null} [body]
  * @param {object} [headers]
@@ -43,7 +43,7 @@ const requestCommon = (url, method, type, body, headers) => {
     return new Promise((resolve, reject) => {
         requestBase(
             url,
-            method,
+            (undefined === method ? 'GET' : method),
             (undefined === body ? null : body),
             (state, request, ev) => {
                 switch (state) {
@@ -63,7 +63,7 @@ const requestCommon = (url, method, type, body, headers) => {
                             304 === request.status /* ReadCache */
                         ) {
                             resolve({
-                                header: request.getAllResponseHeaders(),
+                                header: request.getAllResponseHeaders().split('\n'),
                                 data: request.response
                             });
                         } else {
@@ -76,7 +76,7 @@ const requestCommon = (url, method, type, body, headers) => {
     });
 };
 
-// demo
-requestCommon("https://www.baidu.com/", "GET").then(res => {
-    console.log(res);
-});
+// // demo
+// requestCommon("https://www.baidu.com/").then(res => {
+//     console.log(res);
+// });
