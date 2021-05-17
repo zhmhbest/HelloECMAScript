@@ -50,6 +50,11 @@ reg add "HKCR\TSFile\Shell\Open\Command" /f /ve /t REG_SZ /d "\"%NODE_HOME%\bin\
 
 ```bash
 npm config set registry https://registry.npm.taobao.org/
-npm config set ELECTRON_MIRROR https://npm.taobao.org/mirrors/electron/
+npm config set NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node/
+npm config set NVMW_NPM_MIRROR=http://npm.taobao.org/mirrors/npm/
+npm config set ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
+npm config set ELECTRON_BUILDER_BINARIES_MIRROR=http://npm.taobao.org/mirrors/electron-builder-binaries/
+npm config set SASS_BINARY_SITE=http://npm.taobao.org/mirrors/node-sass/
+npm config set PYTHON_MIRROR=http://npm.taobao.org/mirrors/python/
 npm config ls
 ```
