@@ -49,6 +49,18 @@ yarn config set cache-folder "%NODE_HOME%\cache\yarn"
 yarn config set global-folder "%NODE_HOME%\cache\modules"
 ```
 
+### node-gyp
+
+>gyp是为Chromium项目创建的项目生成工具，可以从平台无关的配置生成平台相关的项目文件。
+
+将依赖[Python](https://www.python.org/downloads/)和[MSVC](https://visualstudio.microsoft.com/zh-hans/downloads/)（选择**Visual Studio 生成工具**、**使用C++的桌面开发**、可选项仅包含**MSVC**、**CMake**、**Windows SDK**）
+
+```batch
+npm -g i node-gyp
+
+node-gyp rebuild
+```
+
 ### 关联JS启动
 
 ```batch
