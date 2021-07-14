@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
       
       
       
@@ -288,35 +288,48 @@ pre[data-line] .line-highlight[data-end]:after {
 <h2 class="mume-header" id="%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">&#x73AF;&#x5883;&#x914D;&#x7F6E;</h2>
 
 <ul>
-<li>&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>NODE_HOME</code>&#x4E3A;Nodejs&#x6240;&#x5728;&#x76EE;&#x5F55;</li>
-<li>&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;<code>NODE_PATH</code>&#x4E3A;
-<ul>
-<li><code>%NODE_HOME%\bin\node_modules</code></li>
+<li>&#x4E0B;&#x8F7D;<a href="https://nodejs.org/en/download/">Binary NodeJs</a></li>
 </ul>
-</li>
-<li>&#x6DFB;&#x52A0;<code>%NODE_HOME%\bin</code>&#x5230;<code>PATH</code>&#x4E2D;</li>
-</ul>
-<pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token comment">REM &#x51C6;&#x5907;&#x76EE;&#x5F55;</span>
-<span class="token command"><span class="token keyword">MKDIR</span> <span class="token string">&quot;%NODE_HOME%\bin&quot;</span></span>
-<span class="token command"><span class="token keyword">MKDIR</span> <span class="token string">&quot;%NODE_HOME%\cache&quot;</span></span>
-<span class="token command"><span class="token keyword">MKDIR</span> <span class="token string">&quot;%NODE_HOME%\cache\npm&quot;</span></span>
-<span class="token command"><span class="token keyword">MKDIR</span> <span class="token string">&quot;%NODE_HOME%\cache\yarn&quot;</span></span>
+<pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token comment">REM &#x5220;&#x9664;&#x5386;&#x53F2;&#x914D;&#x7F6E;</span>
+<span class="token command"><span class="token keyword">DEL</span> <span class="token parameter attr-name">/F</span> <span class="token parameter attr-name">/Q</span> <span class="token variable">%Userprofile%</span>\.npmrc</span>
+<span class="token command"><span class="token keyword">DEL</span> <span class="token parameter attr-name">/F</span> <span class="token parameter attr-name">/Q</span> <span class="token variable">%Userprofile%</span>\.yarnrc</span>
+</pre><pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token comment">REM &#x4E34;&#x65F6;&#x73AF;&#x5883;</span>
+<span class="token command"><span class="token keyword">SET</span> <span class="token variable">NODE_HOME</span><span class="token operator">=</span>D:\ProgramFiles\Programming\Nodejs\node<span class="token operator">-</span>v14.<span class="token number">17</span>.<span class="token number">3</span><span class="token operator">-</span>win<span class="token operator">-</span>x64</span>
+<span class="token command"><span class="token keyword">CD</span> <span class="token parameter attr-name">/D</span> <span class="token string">&quot;%NODE_HOME%&quot;</span></span>
 
-<span class="token comment">REM &#x914D;&#x7F6E;NPM</span>
-<span class="token command"><span class="token keyword">npm</span> config set prefix <span class="token variable">%NODE_HOME%</span>\bin</span>
-<span class="token command"><span class="token keyword">npm</span> config set cache <span class="token variable">%NODE_HOME%</span>\cache\npm</span>
+<span class="token comment">REM &#x51C6;&#x5907;&#x76EE;&#x5F55;</span>
+<span class="token command"><span class="token keyword">MKDIR</span> .\bin</span>
+<span class="token command"><span class="token keyword">MKDIR</span> .\cache</span>
+<span class="token command"><span class="token keyword">MKDIR</span> .\cache\npm</span>
+
+<span class="token comment">REM &#x51C6;&#x5907;NPM&#x3001;Yarn</span>
+<span class="token command"><span class="token keyword">SET</span> <span class="token variable">NPM</span><span class="token operator">=</span>node <span class="token string">&quot;%NODE_HOME%\node_modules\npm\bin\npm-cli.js&quot;</span></span>
+%NPM% config set registry https://registry.npm.taobao.org/
+%NPM% config set cache &quot;%NODE_HOME%\cache\npm&quot;
+%NPM% config set prefix &quot;%NODE_HOME%\bin&quot;
+%NPM% -g i npm yarn
+%NPM% config delete prefix
+
+<span class="token comment">REM &#x51C6;&#x5907;Node</span>
+<span class="token command"><span class="token keyword">COPY</span> <span class="token parameter attr-name">/y</span> .\node.exe .\bin\node.exe</span>
+
+<span class="token comment">REM &#x914D;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;</span>
+<span class="token command"><span class="token keyword">SETX</span> NODE_HOME <span class="token string">&quot;%NODE_HOME%&quot;</span></span>
+<span class="token comment">REM SET NODE_HOME=</span>
+<span class="token comment">REM SETX NODE_PATH &quot;%NODE_HOME%\bin\node_modules&quot;</span>
+</pre><ul>
+<li>&#x624B;&#x52A8;&#x6DFB;&#x52A0;<code>%NODE_HOME%\bin</code>&#x5230;<code>%PATH%</code>&#x4E2D;</li>
+</ul>
+<pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token comment">REM &#x6D4B;&#x8BD5;</span>
+<span class="token command"><span class="token keyword">node</span> <span class="token parameter attr-name">-v</span></span>
 <span class="token command"><span class="token keyword">npm</span> config ls</span>
-<span class="token command"><span class="token keyword">COPY</span> <span class="token parameter attr-name">/y</span> <span class="token string">&quot;%NODE_HOME%\node.exe&quot;</span> <span class="token string">&quot;%NODE_HOME%\bin\node.exe&quot;</span></span>
-
-<span class="token comment">REM &#x6B64;&#x5904;&#x53EF;&#x4EE5;&#x5148;&#x914D;&#x7F6E;&#x955C;&#x50CF;</span>
-&quot;%NODE_HOME%\npm&quot; -g i npm
-&quot;%NODE_HOME%\npm&quot; -g i yarn
+<span class="token command"><span class="token keyword">yarn</span> config list</span>
 
 <span class="token comment">REM &#x914D;&#x7F6E;YARN</span>
-<span class="token command"><span class="token keyword">yarn</span> config set prefix <span class="token variable">%NODE_HOME%</span></span>
-<span class="token command"><span class="token keyword">yarn</span> config set global-folder <span class="token variable">%NODE_HOME%</span>\cache\modules</span>
-<span class="token command"><span class="token keyword">yarn</span> config set cache-folder <span class="token variable">%NODE_HOME%</span>\cache\yarn</span>
-<span class="token command"><span class="token keyword">yarn</span> config list</span>
+<span class="token command"><span class="token keyword">MKDIR</span> <span class="token string">&quot;%NODE_HOME%\cache\yarn&quot;</span></span>
+<span class="token command"><span class="token keyword">MKDIR</span> <span class="token string">&quot;%NODE_HOME%\cache\modules&quot;</span></span>
+<span class="token command"><span class="token keyword">yarn</span> config set cache-folder <span class="token string">&quot;%NODE_HOME%\cache\yarn&quot;</span></span>
+<span class="token command"><span class="token keyword">yarn</span> config set global-folder <span class="token string">&quot;%NODE_HOME%\cache\modules&quot;</span></span>
 </pre><h3 class="mume-header" id="%E5%85%B3%E8%81%94js%E5%90%AF%E5%8A%A8">&#x5173;&#x8054;JS&#x542F;&#x52A8;</h3>
 
 <pre data-role="codeBlock" data-info="batch" class="language-batch"><span class="token comment">REM &#x5728;&#x7BA1;&#x7406;&#x5458;&#x547D;&#x4EE4;&#x7A97;&#x53E3;&#x4E2D;&#x8F93;&#x5165;</span>
